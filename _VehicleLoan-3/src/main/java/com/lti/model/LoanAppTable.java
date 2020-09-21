@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "LOAN_APPLICATION")
@@ -22,28 +24,41 @@ public class LoanAppTable implements Serializable
 	@Id
 	@Column(name = "CHASSIS_NUMBER")
 	private String chassisNo;
+	
 	@Column(name = "USER_EXISTING_EMI")
 	private double existingEMI;
+	
 	@Column(name = "LOAN_TENURE")
 	private int tenure;
+	
 	@Column(name = "LOAN_INTEREST")
 	private int interest;
+	
 	@Column(name = "LOAN_AMOUNT")
 	private double amount;
+	
 	@Column(name = "LOAN_APPLICATION_DATE")
+	@Temporal(TemporalType.DATE)
 	private Date appdate;
+	
 	@Column(name = "LOAN_APPLICATION_STATUS")
 	private String status;
+	
 	@Column(name = "VEHICLE_BRAND")
 	private String brand;
+	
 	@Column(name = "VEHICLE_COLOUR")
 	private String colour;
+	
 	@Column(name = "VEHICLE_MODEL")
 	private String model;
+	
 	@Column(name = "VEHICLE_TYPE")
 	private int type;
+	
 	@Column(name = "VEHICLE_EXSHOWROOM_PRICE")
 	private double exShowPrice;
+	
 	@Column(name = "VEHICLE_ONROAD_PRICE")
 	private double onRoadPrice;
 	

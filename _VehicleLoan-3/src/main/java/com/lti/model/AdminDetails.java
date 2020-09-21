@@ -15,8 +15,10 @@ public class AdminDetails implements Serializable
 	@Id
 	@Column(name = "ADMIN_EMAIL")
 	private String email;
+	
 	@Column(name = "ADMIN_FULL_NAME")
 	private String name;
+	
 	@Column(name = "ADMIN_PASSWORD")
 	private String password;
 	

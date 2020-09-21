@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
-import com.lti.App;
 import com.lti.model.Account;
 import com.lti.model.AdminDetails;
 import com.lti.model.Approved;
@@ -47,33 +46,7 @@ public class VehicleDaoImpl {
 	}
 	
 	
-	//REMOVING THE ENTITIES
-	//Remove User Basic 
-	public void deleteUserBasic(UserBasic userbasic)
-	{
-		entityManager.remove(userbasic);
-	}
-	//Remove User Advanced
-	public void deleteUserAdvanced(UserAdvanced useradvanced)
-	{
-		entityManager.remove(useradvanced);
-	}
-	//Remove Application Form
-	public void deleteApplication(LoanAppTable loanapptable)
-	{
-		entityManager.remove(loanapptable);
-	}
-	//remove approved part
-	public void deleteApproved(Approved approved)
-	{
-		entityManager.remove(approved);
-	}
-	public void deleteAccount(Account account)
-	{
-		entityManager.remove(account);
-	}
-	
-	//SELECTING 
+	//FETCHING DATA FROM THE DATABASE
 	//USER
 	public List<UserBasic> showUserRegistrationInformation(String email)
 	{
@@ -117,6 +90,7 @@ public class VehicleDaoImpl {
 	{
 		String jpql = "select u.email,u.name,u.age,u.gender,u.mobile from UserBasic u";
 		Query tquery = entityManager.createQuery(jpql);
+		@SuppressWarnings("unchecked")
 		List<Object[]> list = tquery.getResultList();
 		return list;
 	}
@@ -137,6 +111,32 @@ public class VehicleDaoImpl {
 		TypedQuery<Approved> tquery = entityManager.createQuery(jpql,Approved.class);
 		List<Approved> list = tquery.getResultList();
 		return list;
+	}
+	
+	//REMOVING THE ENTITIES
+	//Remove User Basic 
+	public void deleteUserBasic(UserBasic userbasic)
+	{
+		entityManager.remove(userbasic);
+	}
+	//Remove User Advanced
+	public void deleteUserAdvanced(UserAdvanced useradvanced)
+	{
+		entityManager.remove(useradvanced);
+	}
+	//Remove Application Form
+	public void deleteApplication(LoanAppTable loanapptable)
+	{
+		entityManager.remove(loanapptable);
+	}
+	//remove approved part
+	public void deleteApproved(Approved approved)
+	{
+		entityManager.remove(approved);
+	}
+	public void deleteAccount(Account account)
+	{
+		entityManager.remove(account);
 	}
 	
 	

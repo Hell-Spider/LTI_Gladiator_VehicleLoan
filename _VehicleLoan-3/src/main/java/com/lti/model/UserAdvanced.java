@@ -22,24 +22,34 @@ public class UserAdvanced implements Serializable
 	@Column(name = "USER_DETAILS_ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;
+	
 	@Column(name = "USER_ADDRESS")
 	private String address;
+	
 	@Column(name = "USER_STATE")
 	private String state;
+	
 	@Column(name = "USER_CITY")
 	private String city;
+	
 	@Column(name = "USER_PIN_CODE")
 	private String pin;
+	
 	@Column(name = "USER_EMPLOYMENT_TYPE")
 	private String emptype;
+	
 	@Column(name = "USER_SALARY")
 	private double salary;
+	
 	@Column(name = "USER_AADHAR_URL")
 	private String aadhar;
+	
 	@Column(name = "USER_PAN_URL")
 	private String pan;
+	
 	@Column(name = "USER_SALARYSLIP_URL")
 	private String salarySlip;
+	
 	@Column(name = "USER_ADDRESSPROOF_URL")
 	private String addressProof;
 	

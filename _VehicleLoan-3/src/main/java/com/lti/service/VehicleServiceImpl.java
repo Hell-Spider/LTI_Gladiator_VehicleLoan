@@ -67,43 +67,7 @@ public class VehicleServiceImpl
 	}
 	
 	
-	//Remove User Basic 
-	public void removeUserBasic(UserBasic userbasic)
-	{
-		dao.beginTransaction();
-		dao.deleteUserBasic(userbasic);
-		dao.commitTransaction();
-	}
-	//Remove User Advanced
-	public void removeUserAdvanced(UserAdvanced useradvanced)
-	{
-		dao.beginTransaction();
-		dao.deleteUserAdvanced(useradvanced);
-		dao.commitTransaction();
-	}
-	//Remove Application Form
-	public void removeApplication(LoanAppTable loanapptable)
-	{
-		dao.beginTransaction();
-		dao.deleteApplication(loanapptable);
-		dao.commitTransaction();
-	}
-	//remove approved part
-	public void removeApproved(Approved approved)
-	{
-		dao.beginTransaction();
-		dao.deleteApproved(approved);
-		dao.commitTransaction();
-	}
-	//remove Account part
-	public void removeAccount(Account account)
-	{
-		dao.beginTransaction();
-		dao.deleteAccount(account);
-		dao.commitTransaction();
-	}
-	
-	
+	//VIEWING THE DATA
 	//USER SERVICES
 	public List<UserBasic> viewUserRegistrationInformation(String email)
 	{
@@ -155,5 +119,43 @@ public class VehicleServiceImpl
 				dao.commitTransaction();
 			}
 		}
+	}
+	
+	
+	//REMOVING ENTITIES SERVICES
+	//Remove User Basic 
+	public void removeUserBasic(UserBasic userbasic)
+	{
+		dao.beginTransaction();
+		dao.deleteUserBasic(userbasic);
+		dao.commitTransaction();
+	}
+	//Remove User Advanced
+	public void removeUserAdvanced(UserAdvanced useradvanced)
+	{
+		dao.beginTransaction();
+		dao.deleteUserAdvanced(useradvanced);
+		dao.commitTransaction();
+	}
+	//Remove Application Form
+	public void removeApplication(LoanAppTable loanapptable)
+	{
+		dao.beginTransaction();
+		dao.deleteApplication(loanapptable);
+		dao.commitTransaction();
+	}
+	//remove approved part
+	public void removeApproved(Approved approved)
+	{
+		dao.beginTransaction();
+		dao.deleteApproved(approved);
+		dao.commitTransaction();
+	}
+	//remove Account part
+	public void removeAccount(Account account)
+	{
+		dao.beginTransaction();
+		dao.deleteAccount(account);
+		dao.commitTransaction();
 	}
 }

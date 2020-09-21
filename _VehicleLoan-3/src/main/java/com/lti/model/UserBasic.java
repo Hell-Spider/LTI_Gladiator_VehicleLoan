@@ -19,14 +19,19 @@ public class UserBasic implements Serializable
 	@Id
 	@Column(name = "USER_EMAIL")
 	private String email;
+	
 	@Column(name = "USER_FULL_NAME")
 	private String name;
+	
 	@Column(name = "USER_GENDER")
 	private String gender;
+	
 	@Column(name = "USER_PHONE_NUMBER")
 	private String mobile;
+	
 	@Column(name = "USER_AGE")
 	private int age;
+	
 	@Column(name = "USER_PASSWORD")
 	private String password;
 	

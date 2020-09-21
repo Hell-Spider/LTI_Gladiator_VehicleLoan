@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "APPROVED_LOANS")
@@ -23,9 +25,12 @@ public class Approved implements Serializable
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "APPROVED_LOAN_ID")
 	private int loanId;
+	
 	@Column(name = "EMI_AMOUNT")
 	private double emi;
+	
 	@Column(name = "EMI_DATE")
+	@Temporal(TemporalType.DATE)
 	private Date emidate;
 	
 	//Account Mapping
