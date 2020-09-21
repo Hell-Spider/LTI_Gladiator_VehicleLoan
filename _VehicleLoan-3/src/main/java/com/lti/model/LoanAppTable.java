@@ -48,7 +48,7 @@ public class LoanAppTable implements Serializable
 	private double onRoadPrice;
 	
 	//User Advanced Mapping
-	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
+	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinColumn(name = "USER_DETAILS_ID")
 	private UserAdvanced user;
 	

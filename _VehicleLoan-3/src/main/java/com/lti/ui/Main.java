@@ -17,7 +17,7 @@ public class Main {
 
 	public static void main(String[] args) 
 	{
-		//VehicleServiceImpl service = new VehicleServiceImpl();
+		VehicleServiceImpl service = new VehicleServiceImpl();
 //		Scanner o = new Scanner(System.in);
 //		
 //		System.out.println("----------------------------------------------------------------------------------------------------------------------------");
@@ -45,37 +45,37 @@ public class Main {
 		
 		
 		
-//		//OBJECTS
-//		//administrator object
-//		AdminDetails admin = new AdminDetails("takumi@gmail.com","Takumi","takumi");
-//		//UserBasic object
-//		UserBasic userbasic1 = new UserBasic("jeetonwheels@gmail.com","Arijeet","Male","8584915408","arijeet",22);
-//		UserBasic userbasic2= new UserBasic("arpanonwheels@gmail.com","Arpan","Male","9113329584","arpan",22);
-//		//UserAdvanced object
-//    	UserAdvanced useradvanced1 = new UserAdvanced("Shanti Valley","Jharkhand","Jamshedpur","831017","Manager",1000,"aadhar","pan","addressproof","salaryslip");
-//    	UserAdvanced useradvanced2 = new UserAdvanced("Behala","West Bengal","Kolkata","731000","Trainer",3000,"aadhar","pan","addressproof","salaryslip");
-//    	//Loan Application Table
-//    	LoanAppTable loanapptable1 = new LoanAppTable("1111",100,4,15,1000,new Date(),"pending","Toyota","AE-86","white",4,1000,2000);
-//    	LoanAppTable loanapptable2 = new LoanAppTable("1112",500,4,15,1000,new Date(),"pending","Toyota","AE-86","white",4,1000,2000);
-//    	
-//    	//Approved object
-//    	Approved approved1 = new Approved(1000,new Date());
-//    	Approved approved2 = new Approved(2000,new Date());
-//    	//Account object
-//    	Account account1 = new Account();
-//    	Account account2 = new Account();
-//    	
-//    	// 1:
-//    	service.createAdmin(admin);
-//    	
-//    	//2:
-//    	service.createUser(userbasic1);
-//    	service.createUser(userbasic2);
-//    	service.createLoanApplicationForm(useradvanced1, loanapptable1, userbasic1);
-//    	service.createLoanApplicationForm(useradvanced2,loanapptable2, userbasic2);
-//    	
-//    	// 3:
-//    	service.createApprovedLoan(approved1, loanapptable1, account1, useradvanced1);
+		//OBJECTS
+		//administrator object
+		AdminDetails admin = new AdminDetails("takumi@gmail.com","Takumi","takumi");
+		//UserBasic object
+		UserBasic userbasic1 = new UserBasic("jeetonwheels@gmail.com","Arijeet","Male","8584915408","arijeet",22);
+		UserBasic userbasic2= new UserBasic("arpanonwheels@gmail.com","Arpan","Male","9113329584","arpan",22);
+		//UserAdvanced object
+    	UserAdvanced useradvanced1 = new UserAdvanced("Shanti Valley","Jharkhand","Jamshedpur","831017","Manager",1000,"aadhar","pan","addressproof","salaryslip");
+    	UserAdvanced useradvanced2 = new UserAdvanced("Behala","West Bengal","Kolkata","731000","Trainer",3000,"aadhar","pan","addressproof","salaryslip");
+    	//Loan Application Table
+    	LoanAppTable loanapptable1 = new LoanAppTable("1111",100,4,15,1000,new Date(),"pending","Toyota","AE-86","white",4,1000,2000);
+    	LoanAppTable loanapptable2 = new LoanAppTable("1112",500,4,15,1000,new Date(),"pending","Toyota","AE-86","white",4,1000,2000);
+    	
+    	//Approved object
+    	Approved approved1 = new Approved(1000,new Date());
+    	Approved approved2 = new Approved(2000,new Date());
+    	//Account object
+    	Account account1 = new Account();
+    	Account account2 = new Account();
+    	
+    	// 1:
+    	service.createAdmin(admin);
+    	
+    	//2:
+    	service.createUser(userbasic1);
+    	service.createUser(userbasic2);
+    	service.createLoanApplicationForm(useradvanced1, loanapptable1, userbasic1);
+    	service.createLoanApplicationForm(useradvanced2,loanapptable2, userbasic2);
+    	
+    	// 3:
+    	service.createApprovedLoan(approved1, loanapptable1, account1, useradvanced1);
     	
     	//service.removeApproved(approved1);
     	//service.removeAccount(account1);

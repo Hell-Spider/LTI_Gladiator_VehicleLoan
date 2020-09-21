@@ -135,4 +135,25 @@ public class VehicleServiceImpl
 	{
 		return dao.showAllApprovedLoans();
 	}
+	public void modifyLoanApplicationStatus()
+	{
+		List<LoanAppTable> list = dao.showAllLoanApplication();
+		for(LoanAppTable i:list)
+		{
+			if(i.getStatus().contentEquals("pending"))
+			{
+				if(i.getUser().getAadhar()==null||i.getUser().getPan()==null||i.getUser().getSalarySlip()==null||i.getUser().getAddressProof()==null)
+				{
+					i.setStatus("rejected");
+				}
+				else
+				{
+					i.setStatus("approved");
+				}
+				dao.beginTransaction();
+				dao.updateLoanApplicationStatus(i);
+				dao.commitTransaction();
+			}
+		}
+	}
 }

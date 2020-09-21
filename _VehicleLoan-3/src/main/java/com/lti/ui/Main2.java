@@ -51,7 +51,7 @@ public class Main2
 			System.out.println(i);
 		}
 		System.out.println("-------------------------------------------------------------------------------------------------------------------");
-		List<Approved> list5 = service.viewAllApprovedLoans();
+		service.modifyLoanApplicationStatus();
 
 	}
 }

@@ -127,6 +127,10 @@ public class VehicleDaoImpl {
 		List<LoanAppTable> list = tquery.getResultList();
 		return list;
 	}
+	public void updateLoanApplicationStatus(LoanAppTable loanapptable)
+	{
+		entityManager.merge(loanapptable);
+	}
 	public List<Approved> showAllApprovedLoans()
 	{
 		String jpql = "select a from Approved a";
