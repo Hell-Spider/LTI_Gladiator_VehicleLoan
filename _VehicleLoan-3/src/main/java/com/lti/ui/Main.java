@@ -18,32 +18,6 @@ public class Main {
 	public static void main(String[] args) 
 	{
 		VehicleServiceImpl service = new VehicleServiceImpl();
-//		Scanner o = new Scanner(System.in);
-//		
-//		System.out.println("----------------------------------------------------------------------------------------------------------------------------");
-//		System.out.println("WELCOME TO VEHICLE LOAN MANAGEMENT SYSTEM");
-//		System.out.println("----------------------------------------------------------------------------------------------------------------------------");
-//		System.out.println("1: Create a new Admin");
-//		System.out.println("2: Create a new User");
-//		System.out.print("Please enter a choice : ");
-//		int i = o.nextInt();
-//		if(i==1)
-//		{
-//			AdminDetails admin = new AdminDetails("Bunta@gmail.com","Bunta","bunta");
-//			service.createAdmin(admin);
-//		}
-//		else
-//		{
-//			UserBasic userbasic1 = new UserBasic("jeetonwheels@gmail.com","Arijeet","Male","8584915408","arijeet",22);
-//			service.createUser(userbasic1);
-//		}
-//		System.out.println("----------------------------------------------------------------------------------------------------------------------------");
-//		
-//		System.out.print("Enter '1' For Filling Loan Application Form");
-//		int j = o.nextInt();
-//		if(j==1)
-		
-		
 		
 		//OBJECTS
 		//administrator object
@@ -75,7 +49,7 @@ public class Main {
     	service.createLoanApplicationForm(useradvanced2,loanapptable2, userbasic2);
     	
     	// 3:
-    	service.createApprovedLoan(approved1, loanapptable1, account1, useradvanced1);
+    	//service.createApprovedLoan(approved1, loanapptable1, account1, useradvanced1);
     	
     	//service.removeApproved(approved1);
     	//service.removeAccount(account1);

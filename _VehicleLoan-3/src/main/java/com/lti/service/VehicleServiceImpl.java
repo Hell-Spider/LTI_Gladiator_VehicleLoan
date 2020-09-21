@@ -69,11 +69,11 @@ public class VehicleServiceImpl
 	
 	//VIEWING THE DATA
 	//USER SERVICES
-	public List<UserBasic> viewUserRegistrationInformation(String email)
+	public UserBasic viewUserRegistrationInformation(String email)
 	{
 		return dao.showUserRegistrationInformation(email);
 	}
-	public List<UserAdvanced> viewUserDetailsInformation(String email)
+	public UserAdvanced viewUserDetailsInformation(String email)
 	{
 		return dao.showUserDetailsInformation(email);
 	}
@@ -120,7 +120,22 @@ public class VehicleServiceImpl
 			}
 		}
 	}
+	public void modifyLoanApplicationLoan1(LoanAppTable i)
+	{
+		dao.beginTransaction();
+		dao.updateLoanApplicationStatus(i);
+		dao.commitTransaction();
+	}
 	
+	//LOGIN
+	public List<AdminDetails> viewAllAdmin()
+	{
+		return dao.showAllAdmin();
+	}
+	public List<UserBasic> viewAllUser()
+	{
+		return dao.showAllUser();
+	}
 	
 	//REMOVING ENTITIES SERVICES
 	//Remove User Basic 

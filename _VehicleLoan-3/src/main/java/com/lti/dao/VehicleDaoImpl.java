@@ -48,19 +48,19 @@ public class VehicleDaoImpl {
 	
 	//FETCHING DATA FROM THE DATABASE
 	//USER
-	public List<UserBasic> showUserRegistrationInformation(String email)
+	public UserBasic showUserRegistrationInformation(String email)
 	{
 		String jpql = "select u from UserBasic u where u.email=:email";
-		TypedQuery<UserBasic> tquery = entityManager.createQuery(jpql,UserBasic.class).setParameter("email",email);
-		List<UserBasic> list = tquery.getResultList();
-		return list;
+		Query query = entityManager.createQuery(jpql).setParameter("email",email);
+		UserBasic u = (UserBasic)query.getSingleResult();
+		return u;
 	}
-	public List<UserAdvanced> showUserDetailsInformation(String email)
+	public UserAdvanced showUserDetailsInformation(String email)
 	{
 		String jpql = "select u from UserAdvanced u where u.userregister.email=:email";
-		TypedQuery<UserAdvanced> tquery = entityManager.createQuery(jpql,UserAdvanced.class).setParameter("email",email);
-		List<UserAdvanced> list = tquery.getResultList();
-		return list;
+		Query query = entityManager.createQuery(jpql).setParameter("email",email);
+		UserAdvanced u = (UserAdvanced)query.getSingleResult();
+		return u;
 	}
 	public List<LoanAppTable> showUserLoanApplication(String email)
 	{
@@ -112,6 +112,21 @@ public class VehicleDaoImpl {
 		List<Approved> list = tquery.getResultList();
 		return list;
 	}
+	
+	//LOGIN
+	public List<AdminDetails> showAllAdmin()
+	{
+		TypedQuery<AdminDetails> tquery = entityManager.createQuery("select a from AdminDetails a",AdminDetails.class);
+		List<AdminDetails> list = tquery.getResultList();
+		return list;
+	}
+	public List<UserBasic> showAllUser()
+	{
+		TypedQuery<UserBasic> tquery = entityManager.createQuery("select a from UserBasic a",UserBasic.class);
+		List<UserBasic> list = tquery.getResultList();
+		return list;
+	}
+	
 	
 	//REMOVING THE ENTITIES
 	//Remove User Basic 

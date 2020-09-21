@@ -33,11 +33,11 @@ public class Approved implements Serializable
 	@Temporal(TemporalType.DATE)
 	private Date emidate;
 	
+	//MAPPING
 	//Account Mapping
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "ACCOUNT_NUMBER")
 	private Account account;
-	
 	//Loan Application Mapping
 	@OneToOne(cascade = CascadeType.PERSIST,orphanRemoval = true)
 	@JoinColumn(name = "CHASSIS_NUMBER")

@@ -20,7 +20,7 @@ import javax.persistence.TemporalType;
 public class LoanAppTable implements Serializable
 {
 	private static final long serialVersionUID = 1L;
-	//Fields Values
+
 	@Id
 	@Column(name = "CHASSIS_NUMBER")
 	private String chassisNo;

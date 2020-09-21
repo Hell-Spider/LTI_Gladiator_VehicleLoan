@@ -17,10 +17,10 @@ public class Main2
 		//USER
 		System.out.println("USER");
 		System.out.println("-------------------------------------------------------------------------------------------------------------------");
-		List<UserBasic> userbasic = service.viewUserRegistrationInformation("jeetonwheels@gmail.com");
+		UserBasic userbasic = service.viewUserRegistrationInformation("jeetonwheels@gmail.com");
 		System.out.println(userbasic);
 		System.out.println("-------------------------------------------------------------------------------------------------------------------");
-		List<UserAdvanced> useradvanced = service.viewUserDetailsInformation("jeetonwheels@gmail.com");
+		UserAdvanced useradvanced = service.viewUserDetailsInformation("jeetonwheels@gmail.com");
 		System.out.println(useradvanced);
 		System.out.println("-------------------------------------------------------------------------------------------------------------------");
 		List<LoanAppTable> list1 = service.viewUserLoanApplication("jeetonwheels@gmail.com");
@@ -51,7 +51,7 @@ public class Main2
 			System.out.println(i);
 		}
 		System.out.println("-------------------------------------------------------------------------------------------------------------------");
-		service.modifyLoanApplicationStatus();
+		//service.modifyLoanApplicationStatus();
 
 	}
 }
