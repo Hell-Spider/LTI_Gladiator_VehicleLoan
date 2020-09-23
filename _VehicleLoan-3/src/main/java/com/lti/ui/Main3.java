@@ -116,7 +116,7 @@ public class Main3
 //		String cotp = otp.generateOTP();
 //		mail.send(a, "OTP For Password Regeneration", "<p>Your <b>One Time Password</b> is : "+cotp+"</p>");
 //		
-//		System.out.print("Enter the OTP which you "+cotp+" received in your Email ID : ");
+//		System.out.print("Enter the OTP which you received in your Email ID : ");
 //		int b = p.nextInt();
 //		String bc = String.valueOf(b);
 //		if(cotp.contains(bc))
