@@ -1,0 +1,16 @@
+//FUNCTIONALITIES
+//COMMITTED
+1: REGISTERING : User/Admin
+
+2: FORGOT PASSWORD : User
+
+3: LOGIN  : User/Admin   
+  
+4: DASHBOARD : User/Admin  
+
+//Needs some modification
+5: MODIFYING APPLICATION STATUS : Admin 
+    Account Check (If Existing)
+
+6: USER AND LOAN DETAILS : User
+    To be implemented properly 

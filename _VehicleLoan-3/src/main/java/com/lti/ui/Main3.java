@@ -27,7 +27,7 @@ public class Main3
 		
 		
 		//REGISTERING A NEW ADMIN / USER FUNCTIONALITY
-//		System.out.println("CREATE");
+//		System.out.println("REGISTER IMPLEMENTATION");
 //		System.out.println("1: Create a new Admin");
 //		System.out.println("2: Create a new User");
 //		System.out.print("Please Enter Your choice : ");
@@ -108,6 +108,7 @@ public class Main3
 		
 		
 		//FORGOT PASSWORD IMPLEMENTATION
+//		System.out.println("FORGOT PASSWORD IMPLEMENTATION");
 //		System.out.print("Enter Your Email ID : ");
 //		String a = o.next();
 //		OTPServiceImpl otp = new OTPServiceImpl();
@@ -134,7 +135,7 @@ public class Main3
 		
 		
 		//LOGIN FUNCTIONALITY FOR ADMIN / USER
-//		System.out.println("LOGIN");
+//		System.out.println("LOGIN IMPLEMENTATION");
 //		System.out.println("1: Enter Admin Login Details");
 //		System.out.println("2: Enter User Login Details");
 //		System.out.print("Enter your Choice : ");
