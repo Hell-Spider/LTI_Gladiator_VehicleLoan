@@ -38,7 +38,14 @@ public class MailServiceImpl {
 			message.setContent(msg, "text/html");
 			// send message
 			Transport.send(message);
-			System.out.println("Registration Email Successfully sent to "+to);
+			if(sub=="REGISTRATION SUCCESSFULL")
+			{
+				System.out.println("Registration Email Successfully sent to "+to);
+			}
+			else
+			{
+				System.out.println("One Time Password is sent successfully to "+to);
+			}
 		} 
 		catch (MessagingException e) 
 		{

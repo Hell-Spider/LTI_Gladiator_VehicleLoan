@@ -10,6 +10,7 @@ import com.lti.model.LoanAppTable;
 import com.lti.model.UserAdvanced;
 import com.lti.model.UserBasic;
 import com.lti.service.MailServiceImpl;
+import com.lti.service.OTPServiceImpl;
 import com.lti.service.VehicleServiceImpl;
 
 public class Main3 
@@ -26,85 +27,109 @@ public class Main3
 		
 		
 		//REGISTERING A NEW ADMIN / USER FUNCTIONALITY
-		System.out.println("CREATE");
-		System.out.println("1: Create a new Admin");
-		System.out.println("2: Create a new User");
-		System.out.print("Please Enter Your choice : ");
-		int i = p.nextInt();
-		if(i==1)
-		{
-			AdminDetails admin = new AdminDetails();
-			System.out.print("Enter the Email Id of the ADMIN : ");
-			admin.setEmail(o.next());
-			
-			int ras = 0;
-			List<AdminDetails> list = service.viewAllAdmin();
-			for(AdminDetails admins:list)
-			{
-				if(admins.getEmail().contentEquals(admin.getEmail()))
-				{
-					ras=1;
-					break;
-				}
-			}
-			if(ras==1)
-			{
-				System.out.println("You Are Already Registered With Us!");
-			}
-			else
-			{
-				System.out.print("Enter the Name of the ADMIN : ");
-				admin.setName(o.next());
-				System.out.print("Enter the Password for the ADMIN : ");
-				admin.setPassword(o.next());
-				service.createAdmin(admin);
-				System.out.println("Successfully Registered !");
-			}
-		}
-		else if(i==2)
-		{
-			UserBasic userbasic1 = new UserBasic();
-			System.out.print("Enter your Email Id : ");
-			userbasic1.setEmail(o.next());
-			
-			int rus = 0;
-			List<UserBasic> list = service.viewAllUser();
-			for(UserBasic user:list)
-			{
-				if(user.getEmail().contentEquals(userbasic1.getEmail()))
-				{
-					rus = 1;
-					break;
-				}
-			}
-			if(rus==1)
-			{
-				System.out.println("This Email ID is Already Registered With Us !");
-			}
-			else
-			{
-				System.out.print("Enter your Name : ");
-				userbasic1.setName(o.next());
-				System.out.print("Enter your Gender : ");
-				userbasic1.setGender(o.next());
-				System.out.print("Enter your Phone Number : ");
-				userbasic1.setMobile(o.next());
-				System.out.print("Enter your Password : ");
-				userbasic1.setPassword(o.next());
-				System.out.print("Enter your Age : ");
-				userbasic1.setAge(p.nextInt());
-				
-				service.createUser(userbasic1);
-				MailServiceImpl mail = new MailServiceImpl();
-				mail.send(userbasic1.getEmail(),"REGISTRATION SUCCESSFULL","<b>CONGRATULATIONS !</b> You have Successfully Registered with Wheels4Hope<br><p>Hope We will serve you better</p>");
-				System.out.println("Successfully Registered !");
-			}
-			
-			
-		}
-		System.out.println("----------------------------------------------------------------------------------------------------------------------------");
+//		System.out.println("CREATE");
+//		System.out.println("1: Create a new Admin");
+//		System.out.println("2: Create a new User");
+//		System.out.print("Please Enter Your choice : ");
+//		int i = p.nextInt();
+//		if(i==1)
+//		{
+//			AdminDetails admin = new AdminDetails();
+//			System.out.print("Enter the Email Id of the ADMIN : ");
+//			admin.setEmail(o.next());
+//			
+//			int ras = 0;
+//			List<AdminDetails> list = service.viewAllAdmin();
+//			for(AdminDetails admins:list)
+//			{
+//				if(admins.getEmail().contentEquals(admin.getEmail()))
+//				{
+//					ras=1;
+//					break;
+//				}
+//			}
+//			if(ras==1)
+//			{
+//				System.out.println("You Are Already Registered With Us!");
+//			}
+//			else
+//			{
+//				System.out.print("Enter the Name of the ADMIN : ");
+//				admin.setName(o.next());
+//				System.out.print("Enter the Password for the ADMIN : ");
+//				admin.setPassword(o.next());
+//				service.createAdmin(admin);
+//				System.out.println("Successfully Registered !");
+//			}
+//		}
+//		else if(i==2)
+//		{
+//			UserBasic userbasic1 = new UserBasic();
+//			System.out.print("Enter your Email Id : ");
+//			userbasic1.setEmail(o.next());
+//			
+//			int rus = 0;
+//			List<UserBasic> list = service.viewAllUser();
+//			for(UserBasic user:list)
+//			{
+//				if(user.getEmail().contentEquals(userbasic1.getEmail()))
+//				{
+//					rus = 1;
+//					break;
+//				}
+//			}
+//			if(rus==1)
+//			{
+//				System.out.println("This Email ID is Already Registered With Us !");
+//			}
+//			else
+//			{
+//				System.out.print("Enter your Name : ");
+//				userbasic1.setName(o.next());
+//				System.out.print("Enter your Gender : ");
+//				userbasic1.setGender(o.next());
+//				System.out.print("Enter your Phone Number : ");
+//				userbasic1.setMobile(o.next());
+//				System.out.print("Enter your Password : ");
+//				userbasic1.setPassword(o.next());
+//				System.out.print("Enter your Age : ");
+//				userbasic1.setAge(p.nextInt());
+//				
+//				service.createUser(userbasic1);
+//				MailServiceImpl mail = new MailServiceImpl();
+//				mail.send(userbasic1.getEmail(),"REGISTRATION SUCCESSFULL","<b>CONGRATULATIONS !</b> You have Successfully Registered with Wheels4Hope<br><p>Hope We will serve you better</p>");
+//				System.out.println("Successfully Registered !");
+//			}
+//			
+//			
+//		}
+//		System.out.println("----------------------------------------------------------------------------------------------------------------------------");
 		
 		
+		
+		//FORGOT PASSWORD IMPLEMENTATION
+//		System.out.print("Enter Your Email ID : ");
+//		String a = o.next();
+//		OTPServiceImpl otp = new OTPServiceImpl();
+//		MailServiceImpl mail = new MailServiceImpl();
+//		String cotp = otp.generateOTP();
+//		mail.send(a, "OTP For Password Regeneration", "<p>Your <b>One Time Password</b> is : "+cotp+"</p>");
+//		
+//		System.out.print("Enter the OTP which you "+cotp+" received in your Email ID : ");
+//		int b = p.nextInt();
+//		String bc = String.valueOf(b);
+//		if(cotp.contains(bc))
+//		{
+//			UserBasic u = service.viewUserRegistrationInformation(a);
+//			System.out.print("Enter the New Password : ");
+//			String n = o.next();
+//			u.setPassword(n);
+//			service.modifyPassword(u);
+//		}
+//		else
+//		{
+//			System.out.println("Wrong OTP entered! Please Enter the Correct OTP");
+//		}
 		
 		
 		
@@ -166,7 +191,7 @@ public class Main3
 		
 		
 		
-		
+		//LOAN DETAILS TO BE MODIFIED
 		
 		//USER DETAILS AND LOAN DETAILS
 //		System.out.println("Enter the User Details : ");

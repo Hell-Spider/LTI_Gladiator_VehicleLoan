@@ -62,6 +62,10 @@ public class VehicleDaoImpl {
 		UserAdvanced u = (UserAdvanced)query.getSingleResult();
 		return u;
 	}
+	public void passwordReset(UserBasic u)
+	{
+		entityManager.merge(u);
+	}
 	public List<LoanAppTable> showUserLoanApplication(String email)
 	{
 		String jpql = "select l from LoanAppTable l where l.user.userId=(select u.userId from UserAdvanced u where u.userregister.email=:email)";

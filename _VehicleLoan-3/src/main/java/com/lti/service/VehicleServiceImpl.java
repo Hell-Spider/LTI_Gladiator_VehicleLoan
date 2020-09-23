@@ -85,6 +85,13 @@ public class VehicleServiceImpl
 	{
 		return dao.showUserApprovedLoanApplication(email);
 	}
+	public void modifyPassword(UserBasic u)
+	{
+		dao.beginTransaction();
+		dao.passwordReset(u);
+		dao.commitTransaction();
+		System.out.println("Password Changed Successfully");
+	}
 	
 	//ADMIN SERVICES
 	public List<Object[]> viewAllRgeisteredUsers()
