@@ -17,62 +17,63 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "LOAN_APPLICATION")
-public class LoanAppTable implements Serializable
-{
+public class LoanAppTable implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name = "CHASSIS_NUMBER")
 	private String chassisNo;
-	
+
 	@Column(name = "USER_EXISTING_EMI")
 	private double existingEMI;
-	
+
 	@Column(name = "LOAN_TENURE")
 	private int tenure;
-	
+
 	@Column(name = "LOAN_INTEREST")
 	private int interest;
-	
+
 	@Column(name = "LOAN_AMOUNT")
 	private double amount;
-	
+
 	@Column(name = "LOAN_APPLICATION_DATE")
 	@Temporal(TemporalType.DATE)
 	private Date appdate;
-	
+
 	@Column(name = "LOAN_APPLICATION_STATUS")
 	private String status;
-	
+
 	@Column(name = "VEHICLE_BRAND")
 	private String brand;
-	
+
 	@Column(name = "VEHICLE_COLOUR")
 	private String colour;
-	
+
 	@Column(name = "VEHICLE_MODEL")
 	private String model;
-	
+
 	@Column(name = "VEHICLE_TYPE")
 	private int type;
-	
+
 	@Column(name = "VEHICLE_EXSHOWROOM_PRICE")
 	private double exShowPrice;
-	
+
 	@Column(name = "VEHICLE_ONROAD_PRICE")
 	private double onRoadPrice;
-	
-	//User Advanced Mapping
-	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+
+	// User Advanced Mapping
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "USER_DETAILS_ID")
 	private UserAdvanced user;
-	
-	//Approved Loan Mapping
+
+	// Approved Loan Mapping
 	@OneToOne(mappedBy = "loanapp")
 	private Approved approved;
-	
-	//CONSTRUCTORS
-	public LoanAppTable() {}
+
+	// CONSTRUCTORS
+	public LoanAppTable() {
+	}
+
 	public LoanAppTable(String chassisNo, double existingEMI, int tenure, int interest, double amount, Date appdate,
 			String status, String brand, String colour, String model, int type, double exShowPrice,
 			double onRoadPrice) {
@@ -92,99 +93,128 @@ public class LoanAppTable implements Serializable
 		this.onRoadPrice = onRoadPrice;
 	}
 
-	//GETTERS AND SETTERS
+	// GETTERS AND SETTERS
 	public int getTenure() {
 		return tenure;
 	}
+
 	public void setTenure(int tenure) {
 		this.tenure = tenure;
 	}
+
 	public int getInterest() {
 		return interest;
 	}
+
 	public void setInterest(int interest) {
 		this.interest = interest;
 	}
+
 	public double getAmount() {
 		return amount;
 	}
+
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
+
 	public String getStatus() {
 		return status;
 	}
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
 	public Date getAppdate() {
 		return appdate;
 	}
+
 	public void setAppdate(Date appdate) {
 		this.appdate = appdate;
 	}
+
 	public UserAdvanced getUser() {
 		return user;
 	}
+
 	public Approved getApproved() {
 		return approved;
 	}
+
 	public void setApproved(Approved approved) {
 		this.approved = approved;
 	}
+
 	public void setUser(UserAdvanced user) {
 		this.user = user;
 	}
+
 	public String getChassisNo() {
 		return chassisNo;
 	}
+
 	public void setChassisNo(String chassisNo) {
 		this.chassisNo = chassisNo;
 	}
+
 	public String getBrand() {
 		return brand;
 	}
+
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
+
 	public String getModel() {
 		return model;
 	}
+
 	public void setModel(String model) {
 		this.model = model;
 	}
+
 	public String getColour() {
 		return colour;
 	}
+
 	public void setColour(String colour) {
 		this.colour = colour;
 	}
+
 	public int getType() {
 		return type;
 	}
+
 	public void setType(int type) {
 		this.type = type;
 	}
+
 	public double getExistingEMI() {
 		return existingEMI;
 	}
+
 	public void setExistingEMI(double existingEMI) {
 		this.existingEMI = existingEMI;
 	}
+
 	public double getExShowPrice() {
 		return exShowPrice;
 	}
+
 	public void setExShowPrice(double exShowPrice) {
 		this.exShowPrice = exShowPrice;
 	}
+
 	public double getOnRoadPrice() {
 		return onRoadPrice;
 	}
+
 	public void setOnRoadPrice(double onRoadPrice) {
 		this.onRoadPrice = onRoadPrice;
 	}
-	
-	//TO-STRING
+
+	// TO-STRING
 	@Override
 	public String toString() {
 		return "LoanAppTable [chassisNo=" + chassisNo + ", existingEMI=" + existingEMI + ", tenure=" + tenure
@@ -192,5 +222,5 @@ public class LoanAppTable implements Serializable
 				+ ", brand=" + brand + ", colour=" + colour + ", model=" + model + ", type=" + type + ", exShowPrice="
 				+ exShowPrice + ", onRoadPrice=" + onRoadPrice + "]";
 	}
-		
+
 }

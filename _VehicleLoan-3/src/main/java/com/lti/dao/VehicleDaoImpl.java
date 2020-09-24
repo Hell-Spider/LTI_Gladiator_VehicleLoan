@@ -116,6 +116,12 @@ public class VehicleDaoImpl {
 		List<Approved> list = tquery.getResultList();
 		return list;
 	}
+	public List<Account> showAllAccount()
+	{
+		String jpql = "select a from Account a";
+		TypedQuery<Account> tquery = entityManager.createQuery(jpql,Account.class);
+	    return tquery.getResultList();
+	}
 	
 	//LOGIN
 	public List<AdminDetails> showAllAdmin()

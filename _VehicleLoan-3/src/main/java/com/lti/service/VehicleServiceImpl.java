@@ -133,6 +133,10 @@ public class VehicleServiceImpl
 		dao.updateLoanApplicationStatus(i);
 		dao.commitTransaction();
 	}
+	public List<Account> viewAllAccount()
+	{
+		return dao.showAllAccount();
+	}
 	
 	//LOGIN
 	public List<AdminDetails> viewAllAdmin()

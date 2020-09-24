@@ -1,4 +1,5 @@
 package com.lti.ui;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -13,20 +14,19 @@ import com.lti.service.MailServiceImpl;
 import com.lti.service.OTPServiceImpl;
 import com.lti.service.VehicleServiceImpl;
 
-public class Main3 
-{
-	public static void main(String[] args) 
-	{	
+public class Main3 {
+	public static void main(String[] args) {
 		VehicleServiceImpl service = new VehicleServiceImpl();
 		Scanner o = new Scanner(System.in).useDelimiter("\n");
 		Scanner p = new Scanner(System.in);
-		
-		System.out.println("----------------------------------------------------------------------------------------------------------------------------");
+
+		System.out.println(
+				"----------------------------------------------------------------------------------------------------------------------------");
 		System.out.println("WELCOME TO VEHICLE LOAN MANAGEMENT SYSTEM");
-		System.out.println("----------------------------------------------------------------------------------------------------------------------------");
-		
-		
-		//REGISTERING A NEW ADMIN / USER FUNCTIONALITY
+		System.out.println(
+				"----------------------------------------------------------------------------------------------------------------------------");
+
+		// REGISTERING A NEW ADMIN / USER FUNCTIONALITY
 //		System.out.println("REGISTER IMPLEMENTATION");
 //		System.out.println("1: Create a new Admin");
 //		System.out.println("2: Create a new User");
@@ -104,10 +104,11 @@ public class Main3
 //			
 //		}
 //		System.out.println("----------------------------------------------------------------------------------------------------------------------------");
+
 		
 		
 		
-		//FORGOT PASSWORD IMPLEMENTATION
+		// FORGOT PASSWORD IMPLEMENTATION
 //		System.out.println("FORGOT PASSWORD IMPLEMENTATION");
 //		System.out.print("Enter Your Email ID : ");
 //		String a = o.next();
@@ -131,10 +132,10 @@ public class Main3
 //		{
 //			System.out.println("Wrong OTP entered! Please Enter the Correct OTP");
 //		}
+
 		
 		
-		
-		//LOGIN FUNCTIONALITY FOR ADMIN / USER
+		// LOGIN FUNCTIONALITY FOR ADMIN / USER
 //		System.out.println("LOGIN IMPLEMENTATION");
 //		System.out.println("1: Enter Admin Login Details");
 //		System.out.println("2: Enter User Login Details");
@@ -188,27 +189,109 @@ public class Main3
 //				System.out.println("You have Entered Wrong Credentials !");
 //			}
 //		}
+
 		
 		
-		
-		
-		//LOAN DETAILS TO BE MODIFIED
-		
-		//USER DETAILS AND LOAN DETAILS
-//		System.out.println("Enter the User Details : ");
-//		System.out.print("Enter the Email Id : ");
+		// USER DETAILS AND LOAN DETAILS
+//		System.out.print("Enter Your Email Id : ");
 //		String a = o.next();
-//		UserBasic userbasic = service.viewUserRegistrationInformation(a);
-//		UserAdvanced useradvanced = new UserAdvanced("Shanti Valley","Jharkhand","Jamshedpur","831017","Manager",1000,"aadhar","pan","addressproof","salaryslip");
-//		LoanAppTable loanapptable1 = new LoanAppTable("1111",100,4,15,1000,new Date(),"pending","Toyota","AE-86","white",4,1000,2000);
-//		service.createLoanApplicationForm(useradvanced, loanapptable1, userbasic);
+//		UserBasic u = service.viewUserRegistrationInformation(a);
+//		System.out.println("Enter Your Details");
+//		if(u.getUserdetails() != null)
+//		{
+//			UserAdvanced ua = service.viewUserDetailsInformation(a);
+//			System.out.println("LOAN DETAILS");
+//			LoanAppTable l = new LoanAppTable();
+//			System.out.print("Enter the Chassis Number : ");
+//			l.setChassisNo(o.next());
+//			System.out.print("Enter Your Existing EMI : ");
+//			l.setExistingEMI(p.nextDouble());
+//			System.out.print("Enter Loan Tenure : ");
+//			l.setTenure(p.nextInt());
+//			System.out.print("Enter Loan Interest : ");
+//			l.setInterest(p.nextInt());
+//			System.out.print("Enter Loan Amount : ");
+//			l.setAmount(p.nextDouble());
+//			System.out.print("Enter Vehicle Brand : ");
+//			l.setBrand(o.next());
+//			System.out.print("Enter Vehicle Model : ");
+//			l.setModel(o.next());
+//			System.out.print("Enter Vehicle Colour : ");
+//			l.setColour(o.next());
+//			System.out.print("Enter Vehicle Type : ");
+//			l.setType(p.nextInt());
+//			System.out.print("Enter Vehicle Ex ShowRoom Price : ");
+//			l.setExShowPrice(p.nextDouble());
+//			System.out.print("Enter Vehicle On Road Price : ");
+//			l.setOnRoadPrice(p.nextDouble());
+//			
+//			l.setStatus("pending");
+//			l.setAppdate(new Date());
+//			
+//			service.createLoanApplicationForm(ua, l, u);
+//			System.out.println("Loan Details Added");
+//		}
+//		else
+//		{
+//			System.out.println("USER DETAILS");
+//			UserAdvanced ua = new UserAdvanced();
+//			System.out.print("User Address : ");
+//			ua.setAddress(o.next());
+//			System.out.print("User State : ");
+//			ua.setState(o.next());
+//			System.out.print("User City : ");
+//			ua.setCity(o.next());
+//			System.out.print("User Pin Code : ");
+//			ua.setPin(o.next());
+//			System.out.print("User Employement Type : ");
+//			ua.setEmptype(o.next());
+//			System.out.print("User Salary : ");
+//			ua.setSalary(p.nextDouble());
+//			System.out.print("User Aadhar URL : ");
+//			ua.setAadhar(o.next());
+//			System.out.print("User Pan URL : ");
+//			ua.setPan(o.next());
+//			System.out.print("User Salary Slip URL : ");
+//			ua.setSalarySlip(o.next());
+//			System.out.print("User Address Proof URL : ");
+//			ua.setAddressProof(o.next());
+//			
+//			System.out.println("LOAN DETAILS");
+//			LoanAppTable l = new LoanAppTable();
+//			System.out.print("Enter the Chassis Number : ");
+//			l.setChassisNo(o.next());
+//			System.out.print("Enter Your Existing EMI : ");
+//			l.setExistingEMI(p.nextDouble());
+//			System.out.print("Enter Loan Tenure : ");
+//			l.setTenure(p.nextInt());
+//			System.out.print("Enter Loan Interest : ");
+//			l.setInterest(p.nextInt());
+//			System.out.print("Enter Loan Amount : ");
+//			l.setAmount(p.nextDouble());
+//			System.out.print("Enter Vehicle Brand : ");
+//			l.setBrand(o.next());
+//			System.out.print("Enter Vehicle Model : ");
+//			l.setModel(o.next());
+//			System.out.print("Enter Vehicle Colour : ");
+//			l.setColour(o.next());
+//			System.out.print("Enter Vehicle Type : ");
+//			l.setType(p.nextInt());
+//			System.out.print("Enter Vehicle Ex ShowRoom Price : ");
+//			l.setExShowPrice(p.nextDouble());
+//			System.out.print("Enter Vehicle On Road Price : ");
+//			l.setOnRoadPrice(p.nextDouble());
+//			
+//			l.setStatus("pending");
+//			l.setAppdate(new Date());
+//			
+//			service.createLoanApplicationForm(ua, l, u);
+//			System.out.println("User and Loan Details Added");
+//		}
+
 		
 		
-		
-		
-		
-		//DASHBOARD FUNCTIONALITY
-		//ADMIN
+		// DASHBOARD FUNCTIONALITY
+		// ADMIN
 //		System.out.println("ADMIN");
 //		System.out.println("1: View All the Registered User");
 //		System.out.println("2: View All the Loan Application Form Along with the User Details");
@@ -245,12 +328,11 @@ public class Main3
 //				System.out.println(i);
 //			}
 //		}
+
 		
 		
-		
-		
-		//DASHBORAD FUNCTIONALITY
-		//USER
+		// DASHBORAD FUNCTIONALITY
+		// USER
 //		System.out.println("USER");
 //		System.out.print("Enter Your Email Id : ");
 //		String enteredUserEmail = o.next();
@@ -287,38 +369,58 @@ public class Main3
 //				System.out.println(a);
 //			}
 //		}
+
 		
 		
-		//ADMIN MODIFYING THE LOAN APPLICATION STATUS
+		
+		// ADMIN MODIFYING THE LOAN APPLICATION STATUS
 //		System.out.println("Application Loans List");
 //		List<LoanAppTable> list = service.viewAllLoanApplication();
-//		for(LoanAppTable i:list)
-//		{
-//			System.out.println("------------------------------------------------------------------------------------------------------------------------------------");
-//			System.out.println("User ID : "+i.getUser().getUserId());
+//		List<Account> accounts = service.viewAllAccount();
+//		int f = 0;
+//		for (LoanAppTable i : list) {
+//			System.out.println(
+//					"------------------------------------------------------------------------------------------------------------------------------------");
+//			System.out.println("User ID : " + i.getUser().getUserId());
 //			System.out.println(i.getUser());
 //			System.out.println(i);
 //		}
-//		System.out.println("------------------------------------------------------------------------------------------------------------------------------------");
+//		System.out.println(
+//				"------------------------------------------------------------------------------------------------------------------------------------");
 //		System.out.print("Enter The Chassis Number : ");
 //		String c = o.next();
-//		for(LoanAppTable j:list)
-//		{
-//			if(j.getChassisNo().contentEquals(c))
-//			{
-//				if(j.getStatus().contentEquals("pending"))
-//				{
+//		for (LoanAppTable j : list) {
+//			if (j.getChassisNo().contentEquals(c)) {
+//				if (j.getStatus().contentEquals("pending")) {
 //					System.out.print("Enter 1: for Approval and 2: for Rejection : ");
 //					int k = p.nextInt();
-//					if(k==1)
-//					{
+//					if (k == 1) {
 //						j.setStatus("approved");
-//						service.modifyLoanApplicationLoan1(j);
-//						Approved approved = new Approved(j.getAmount()*1.5,new Date());
-//						Account account = new Account();
-//						service.createApprovedLoan(approved,j, account,j.getUser());
+//						Account a = new Account();
+//						for (Account t : accounts) {
+//							if (t.getUser().getUserId() == j.getUser().getUserId()) {
+//								f = 1;
+//								a = t;
+//								break;
+//							}
+//						}
+//
+//						if (f == 1) {
+//							service.modifyLoanApplicationLoan1(j);
+//							Approved approved = new Approved(j.getAmount() * 1.5, new Date());
+//							service.createApprovedLoan(approved, j, a, j.getUser());
+//							System.out.println("Loan Approved");
+//						} else {
+//							service.modifyLoanApplicationLoan1(j);
+//							Approved approved = new Approved(j.getAmount() * 1.5, new Date());
+//							Account account = new Account();
+//							service.createApprovedLoan(approved, j, account, j.getUser());
+//							System.out.println("Loan Approved");
+//						}
+//					} else if (k == 2) {
+//						j.setStatus("rejected");
+//						System.out.println("Loan Rejected");
 //					}
-//					else if(k==2) {j.setStatus("rejected");}
 //				}
 //			}
 //		}
